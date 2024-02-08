@@ -1,4 +1,4 @@
-import Mathlib.Data.Real.Basic
+import Mathlib.Data.Nat.Basic
 
 
 class Relation (A : Type) where
@@ -22,3 +22,8 @@ class Poset (A : Type) extends Relation A where
 theorem triangleless {A : Type} [Poset A] (a b c : A) :
     (a ⊑ b ∧ b ⊑ c ∧ c ⊑ a) → a = b := by
   sorry
+
+/-
+prefix:70 " ⊓ " => CompleteLattic.infim
+prefix:70 " ⊔ " => CompleteLattic.supre
+-/
