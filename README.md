@@ -1,5 +1,11 @@
 # Lean 4 tutorial
 
+## Timeline
+
+[2024-02-07](ISTA/Class1.lean)
+
+[2024-02-08](ISTA/Class2.lean)
+
 ## How to Lean 4
 
 ### Setup Lean
