@@ -60,35 +60,4 @@ noncomputable def supre (S : Set A) : A :=
 prefix:70 " ⊓ " => infim
 prefix:70 " ⊔ " => supre
 
-lemma supre_is_UpperBound (S : Set A) : UpperBound (⊔S) S :=
-  (CompleteLattic.hasSupre S).choose_spec.left
-
-lemma infim_is_LowerBound (S : Set A) : LowerBound (⊓S) S :=
-  (CompleteLattic.hasInfim S).choose_spec.left
-
-lemma supre_is_Least (S : Set A) (z : A) (hz : UpperBound z S) : ⊔S ⊑ z :=
-  (CompleteLattic.hasSupre S).choose_spec.right z hz
-
-lemma infim_is_Great (S : Set A) (a : A) (ha : LowerBound a S) : a ⊑ ⊓S :=
-  (CompleteLattic.hasInfim S).choose_spec.right a ha
-
-example : (⊔ ∅ : A) = ⊓ Set.univ := by
-  apply Poset.antis
-  · apply supre_is_Least
-    intro x xin
-    cases xin
-  · apply infim_is_LowerBound
-    constructor
-
-example : (⊓ ∅ : A) = ⊔ Set.univ := by
-  apply Poset.antis
-  · apply supre_is_UpperBound
-    constructor
-  · apply infim_is_Great
-    intro x xin
-    cases xin
-
-def Monoton (F : A → A) : Prop :=
-  ∀ x : A, x ⊑ F x
-
 end lattices
