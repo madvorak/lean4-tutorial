@@ -6,6 +6,8 @@
 
 [2024-02-08](ISTA/Class2.lean)
 
+[2024-02-13](ISTA/Class3.lean)
+
 ## How to Lean 4
 
 ### Setup Lean
